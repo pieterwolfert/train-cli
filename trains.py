@@ -22,8 +22,8 @@ class Trains:
             departure_time = train['VertrekTijd']         
             departure_time = time.strptime(departure_time, "%Y-%m-%dT%H:%M:%S+0200")
             departure_time = time.strftime("%H:%M", departure_time)
-            trains.append([destination, platform, departure_time])
-        return tabulate(trains, headers=['Destination', 'Platform', 'Time'])
+            trains.append([destination, platform, departure_time, train_type])
+        return tabulate(trains, headers=['Destination', 'Platform', 'Time', 'Type'])
 
 
     def constructURL(self, station_from):

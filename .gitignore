@@ -1,2 +1,4 @@
-./password
-./user
+password
+user
+*.pyc
+__pycache__/

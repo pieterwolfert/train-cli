@@ -23,7 +23,7 @@ def main():
 @app.route('/<station>')
 def departingTrains(station):
     train_info = Trains(Credentials())
-    return train_info.getDepartingTrains(station)
+    return train_info.getDepartingTrains(station) + '\n'
 
 if __name__=="__main__":
     app.run(host='127.0.0.1')
