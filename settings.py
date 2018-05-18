@@ -3,10 +3,10 @@ import sys
 class Credentials:
     def __init__ (self):
         #password and user should be saved in separate files
-        self.password = open('password', 'r')
-        self.password = self.password.readline().rstrip()
-        self.user = open('user', 'r')
-        self.user = self.user.readline().rstrip()
+        with open('password', 'r') as f:
+            self.password = f.readline().rstrip()
+        with open('user', 'r') as f:
+            self.user = f.readline().rstrip()
 
     def getUser(self):
         return self.user
