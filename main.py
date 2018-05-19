@@ -28,6 +28,11 @@ def main():
                 format(args.station_from.title()))
         train_info.getDepartingTrains(args.station_from)
 
+@app.route('/disruptions')
+def disruptions():
+    train_info = Trains(Credentials())
+    return train_info.getDisruptions()
+
 @app.route('/help')
 def help():
     msg = "Station names consisting of 2 parts need a + sign.\n"
